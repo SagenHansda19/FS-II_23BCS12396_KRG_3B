@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
-@Table(name="patients" ,indexes = @Index(name = "idx_disease",columnList = "diease") )
+@Table(name="patients" ,indexes = @Index(name = "idx_disease",columnList = "disease") )
 
 //Explanation:
 //@Entity
