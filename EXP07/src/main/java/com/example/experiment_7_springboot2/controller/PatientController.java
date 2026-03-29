@@ -51,4 +51,9 @@ public class PatientController {
     ) {
         return patientService.getPatientsByCursor(cursor, size);
     }
+
+    @GetMapping("/disease")
+    public List<Patient> getPatient(@RequestParam String disease) {
+        return patientService.findByDisease(disease);
+    }
 }

@@ -78,4 +78,9 @@ public class PatientService {
 
         return response;
     }
+
+    public List<Patient> findByDisease(String disease) {
+
+        return patientRepository.findByDisease(disease);
+    }
 }
