@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 
 @Configuration
 public class StripeConfig {
@@ -13,6 +14,8 @@ public class StripeConfig {
 
     @PostConstruct
     public void init() {
-        com.stripe.Stripe.apiKey = secretKey;
+        if (StringUtils.hasText(secretKey)) {
+            com.stripe.Stripe.apiKey = secretKey;
+        }
     }
 }
